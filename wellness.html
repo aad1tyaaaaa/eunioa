@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eunioa | Wellness Tools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --accent: #fd79a8;
+            --light: #f8f9fa;
+            --dark: #2d3436;
+            --success: #00b894;
+            --warning: #fdcb6e;
+            --info: #0984e3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f6fa;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            animation: pulse 8s infinite linear;
+        }
+
+        @keyframes pulse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .tagline {
+            font-size: 1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav {
+            background-color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 80%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .page-title h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .page-title p {
+            color: var(--dark);
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tool-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            transform: translateY(0);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .tool-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin: 1.5rem auto;
+            text-align: center;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover .tool-icon {
+            transform: scale(1.1);
+            color: var(--accent);
+        }
+
+        .tool-content {
+            padding: 1.5rem;
+        }
+
+        .tool-content h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+            text-align: center;
+        }
+
+        .tool-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .btn {
+            display: block;
+            width: max-content;
+            margin: 0 auto;
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(108, 92, 231, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        /* Breathing Exercise Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            padding: 2rem;
+            position: relative;
+            transform: scale(0.9);
+            animation: modalAppear 0.3s forwards;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes modalAppear {
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--accent);
+        }
+
+        .modal-title {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .breathing-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            margin: 2rem auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 10px 25px rgba(108, 92, 231, 0.4);
+            animation: breathe 8s infinite ease-in-out;
+        }
+
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(0.9);
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+            }
+            50% {
+                transform: scale(1.1);
+                background: linear-gradient(135deg, var(--accent), #ff7675);
+            }
+        }
+
+        .breath-instructions {
+            text-align: center;
+            margin: 1.5rem 0;
+            color: #666;
+        }
+
+        .breath-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Journal Modal */
+        .journal-textarea {
+            width: 100%;
+            height: 200px;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            resize: none;
+            font-size: 1rem;
+            margin: 1rem 0;
+            transition: border-color 0.3s ease;
+        }
+
+        .journal-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+        }
+
+        .mood-selector {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .mood-option {
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+        }
+
+        .mood-option:hover {
+            transform: translateY(-5px);
+            opacity: 0.9;
+        }
+
+        .mood-option.selected {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .mood-emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Gratitude Modal */
+        .gratitude-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .gratitude-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .gratitude-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .gratitude-input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .add-gratitude {
+            display: block;
+            margin: 1rem auto 0;
+        }
+
+        /* Affirmations Modal */
+        .affirmation-card {
+            background: linear-gradient(135deg, #f6e58d, #ffbe76);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 1.5rem 0;
+            box-shadow: 0 8px 20px rgba(253, 203, 110, 0.3);
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+        }
+
+        .affirmation-card:hover {
+            transform: rotateY(10deg) scale(1.02);
+        }
+
+        .affirmation-text {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .new-affirmation {
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Meditation Player */
+        .meditation-player {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .meditation-track {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .meditation-track:hover {
+            background-color: #f8f9fa;
+        }
+
+        .track-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .play-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background-color: #eee;
+            border-radius: 3px;
+            margin: 1rem 0;
+            cursor: pointer;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Floating animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Pulse animation */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Rotate animation */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .rotate {
+            animation: rotate 10s linear infinite;
+        }
+
+        /* Bounce animation */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .bounce {
+            animation: bounce 1s infinite;
+        }
+
+        /* Custom tool animations */
+        .tool-card:nth-child(1):hover .tool-icon {
+            animation: bounce 1s infinite;
+        }
+
+        .tool-card:nth-child(2):hover .tool-icon {
+            animation: pulse 1.5s infinite;
+        }
+
+        .tool-card:nth-child(3):hover .tool-icon {
+            animation: float 2s infinite;
+        }
+
+        .tool-card:nth-child(4):hover .tool-icon {
+            animation: rotate 4s infinite;
+        }
+
+        .tool-card:nth-child(5):hover .tool-icon {
+            transform: rotate(20deg);
+        }
+
+        .tool-card:nth-child(6):hover .tool-icon {
+            animation: pulse 1s infinite;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Eunioa<span>.</span></div>
+        <div class="tagline">Your mental wellness companion</div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#" class="active">Wellness Tools</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="page-title">
+            <h1>Wellness Tools</h1>
+            <p>Explore our interactive tools designed to support your mental health journey. Take a moment for yourself each day.</p>
+        </div>
+
+        <div class="tools-grid">
+            <!-- Breathing Exercise -->
+            <div class="tool-card" onclick="openModal('breathing-modal')">
+                <i class="fas fa-wind tool-icon"></i>
+                <div class="tool-content">
+                    <h3>Breathing Exercise</h3>
+                    <p>Calm your mind with guided breathing techniques to reduce stress and anxiety.</p>
+                    <a class="btn">Start Breathing</a>
+                </div>
+            </div>
+
+            <!-- Gratitude Journal -->
+            <div class="tool-card" onclick="openModal('gratitude-modal')">
+                <i class="fas fa-heart tool-icon"></i>
+                <div class="tool-content">
+                    <h3>Gratitude Journal</h3>
+                    <p>Practice gratitude by listing things you're thankful for to boost positivity.</p>
+                    <a class="btn">Start Journaling</a>
+                </div>
+            </div>
+
+            <!-- Meditation Guide -->
+            <div class="tool-card" onclick="openModal('meditation-modal')">
+                <i class="fas fa-spa tool-icon"></i>
+                <div class="tool-content">
+                    <h3>Meditation Guide</h3>
+                    <p>Find peace with our guided meditation sessions for all experience levels.</p>
+                    <a class="btn">Begin Meditation</a>
+                </div>
+            </div>
+
+            <!-- Positive Affirmations -->
+            <div class="tool-card" onclick="openModal('affirmations-modal')">
+                <i class="fas fa-comment-dots tool-icon"></i>
+                <div class="tool-content">
+                    <h3>Positive Affirmations</h3>
+                    <p>Boost your self-esteem with personalized positive affirmations.</p>
+                    <a class="btn">Get Affirmations</a>
+                </div>
+            </div>
+
+            <!-- Mood Tracker -->
+            <div class="tool-card" onclick="openModal('mood-modal')">
+                <i class="fas fa-smile tool-icon"></i>
+                <div class="tool-content">
+                    <h3>Mood Tracker</h3>
+                    <p>Track your emotions over time to identify patterns and triggers.</p>
+                    <a class="btn">Track Mood</a>
+                </div>
+            </div>
+
+            <!-- Sleep Sounds -->
+            <div class="tool-card" onclick="openModal('sleep-modal')">
+                <i class="fas fa-moon tool-icon"></i>
+                <div class="tool-content">
+                    <h3>Sleep Sounds</h3>
+                    <p>Relaxing sounds to help you fall asleep faster and sleep more soundly.</p>
+                    <a class="btn">Play Sounds</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breathing Exercise Modal -->
+    <div class="modal" id="breathing-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('breathing-modal')">&times;</span>
+            <h2 class="modal-title">Breathing Exercise</h2>
+            <div class="breathing-circle">
+                <span id="breath-text">Breathe In</span>
+            </div>
+            <p class="breath-instructions">Follow the circle's rhythm: Breathe in for 4 seconds, hold for 4 seconds, breathe out for 6 seconds.</p>
+            <div class="breath-controls">
+                <button class="btn" id="start-breathing">Start</button>
+                <button class="btn btn-outline" onclick="closeModal('breathing-modal')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gratitude Journal Modal -->
+    <div class="modal" id="gratitude-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('gratitude-modal')">&times;</span>
+            <h2 class="modal-title">Gratitude Journal</h2>
+            <p style="text-align: center; margin-bottom: 1.5rem;">List 3 things you're grateful for today:</p>
+            <ul class="gratitude-list" id="gratitude-list">
+                <li class="gratitude-item">
+                    <input type="text" class="gratitude-input" placeholder="I'm grateful for...">
+                </li>
+                <li class="gratitude-item">
+                    <input type="text" class="gratitude-input" placeholder="I'm grateful for...">
+                </li>
+                <li class="gratitude-item">
+                    <input type="text" class="gratitude-input" placeholder="I'm grateful for...">
+                </li>
+            </ul>
+            <button class="btn add-gratitude" onclick="addGratitudeItem()">Add More</button>
+            <button class="btn" style="margin-top: 1rem;" onclick="saveGratitude()">Save Journal</button>
+        </div>
+    </div>
+
+    <!-- Meditation Guide Modal -->
+    <div class="modal" id="meditation-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('meditation-modal')">&times;</span>
+            <h2 class="modal-title">Meditation Guide</h2>
+            <div class="meditation-player">
+                <div class="meditation-track" onclick="playTrack('mindfulness')">
+                    <div class="track-info">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                        <div>
+                            <h4>Mindfulness Meditation</h4>
+                            <p>10 min • Beginner</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-headphones"></i>
+                </div>
+                
+                <div class="meditation-track" onclick="playTrack('anxiety')">
+                    <div class="track-info">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                        <div>
+                            <h4>Anxiety Relief</h4>
+                            <p>15 min • Intermediate</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-headphones"></i>
+                </div>
+                
+                <div class="meditation-track" onclick="playTrack('sleep')">
+                    <div class="track-info">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                        <div>
+                            <h4>Sleep Meditation</h4>
+                            <p>20 min • All levels</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-headphones"></i>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="meditation-progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Positive Affirmations Modal -->
+    <div class="modal" id="affirmations-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('affirmations-modal')">&times;</span>
+            <h2 class="modal-title">Positive Affirmations</h2>
+            <div class="affirmation-card">
+                <p class="affirmation-text" id="affirmation-text">I am worthy of love and respect.</p>
+                <button class="btn new-affirmation" onclick="newAffirmation()">New Affirmation</button>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem;">Repeat this to yourself throughout the day.</p>
+        </div>
+    </div>
+
+    <!-- Mood Tracker Modal -->
+    <div class="modal" id="mood-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('mood-modal')">&times;</span>
+            <h2 class="modal-title">Mood Tracker</h2>
+            <p style="text-align: center;">How are you feeling today?</p>
+            <div class="mood-selector">
+                <div class="mood-option" onclick="selectMood(this, 'awful')">
+                    <div class="mood-emoji">😞</div>
+                    <div>Awful</div>
+                </div>
+                <div class="mood-option" onclick="selectMood(this, 'bad')">
+                    <div class="mood-emoji">😕</div>
+                    <div>Not Great</div>
+                </div>
+                <div class="mood-option" onclick="selectMood(this, 'neutral')">
+                    <div class="mood-emoji">😐</div>
+                    <div>Neutral</div>
+                </div>
+                <div class="mood-option" onclick="selectMood(this, 'good')">
+                    <div class="mood-emoji">🙂</div>
+                    <div>Good</div>
+                </div>
+                <div class="mood-option" onclick="selectMood(this, 'great')">
+                    <div class="mood-emoji">😊</div>
+                    <div>Great!</div>
+                </div>
+            </div>
+            <textarea class="journal-textarea" placeholder="Optional: What's contributing to your mood today?"></textarea>
+            <button class="btn" onclick="saveMood()">Save Mood</button>
+        </div>
+    </div>
+
+    <!-- Sleep Sounds Modal -->
+    <div class="modal" id="sleep-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('sleep-modal')">&times;</span>
+            <h2 class="modal-title">Sleep Sounds</h2>
+            <div class="meditation-player">
+                <div class="meditation-track" onclick="playTrack('rain')">
+                    <div class="track-info">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                        <div>
+                            <h4>Rain Sounds</h4>
+                            <p>Soothing rainfall</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-volume-up"></i>
+                </div>
+                
+                <div class="meditation-track" onclick="playTrack('waves')">
+                    <div class="track-info">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                        <div>
+                            <h4>Ocean Waves</h4>
+                            <p>Calming sea waves</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-volume-up"></i>
+                </div>
+                
+                <div class="meditation-track" onclick="playTrack('forest')">
+                    <div class="track-info">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                        <div>
+                            <h4>Forest Ambience</h4>
+                            <p>Gentle nature sounds</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-volume-up"></i>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="sleep-progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+            
+            // Stop any playing audio
+            stopAllTracks();
+        }
+
+        // Close modal when clicking outside content
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                stopAllTracks();
+            }
+        }
+
+        // Breathing exercise
+        const startBreathingBtn = document.getElementById('start-breathing');
+        const breathText = document.getElementById('breath-text');
+        let breathingInterval;
+        let isBreathing = false;
+
+        startBreathingBtn.addEventListener('click', function() {
+            if (!isBreathing) {
+                isBreathing = true;
+                startBreathingBtn.textContent = 'Pause';
+                startBreathingExercise();
+            } else {
+                isBreathing = false;
+                startBreathingBtn.textContent = 'Start';
+                clearInterval(breathingInterval);
+            }
+        });
+
+        function startBreathingExercise() {
+            let cycle = 0;
+            const phases = [
+                {text: "Breathe In", duration: 4000},
+                {text: "Hold", duration: 4000},
+                {text: "Breathe Out", duration: 6000}
+            ];
+
+            function runCycle() {
+                const phase = phases[cycle % phases.length];
+                breathText.textContent = phase.text;
+                
+                setTimeout(() => {
+                    cycle++;
+                    if (isBreathing) runCycle();
+                }, phase.duration);
+            }
+
+            runCycle();
+        }
+
+        // Gratitude Journal
+        function addGratitudeItem() {
+            const list = document.getElementById('gratitude-list');
+            const newItem = document.createElement('li');
+            newItem.className = 'gratitude-item';
+            newItem.innerHTML = '<input type="text" class="gratitude-input" placeholder="I\'m grateful for...">';
+            list.appendChild(newItem);
+            
+            // Animate addition
+            newItem.style.opacity = '0';
+            newItem.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                newItem.style.transition = 'all 0.3s ease';
+                newItem.style.opacity = '1';
+                newItem.style.transform = 'translateY(0)';
+            }, 10);
+        }
+
+        function saveGratitude() {
+            const inputs = document.querySelectorAll('.gratitude-input');
+            const entries = Array.from(inputs).map(input => input.value).filter(val => val);
+            
+            if (entries.length > 0) {
+                alert('Your gratitude journal has been saved!');
+                closeModal('gratitude-modal');
+            } else {
+                alert('Please add at least one gratitude entry.');
+            }
+        }
+
+        // Affirmations
+        const affirmations = [
+            "I am worthy of love and respect.",
+            "I choose to focus on what I can control.",
+            "I am enough just as I am.",
+            "My challenges help me grow.",
+            "I radiate positivity and confidence.",
+            "I am proud of my progress.",
+            "I deserve happiness and fulfillment.",
+            "I trust in my ability to figure things out.",
+            "I am open to new possibilities.",
+            "I choose peace over perfection."
+        ];
+
+        function newAffirmation() {
+            const affirmationText = document.getElementById('affirmation-text');
+            const randomIndex = Math.floor(Math.random() * affirmations.length);
+            
+            // Fade out animation
+            affirmationText.style.opacity = '0';
+            affirmationText.style.transition = 'opacity 0.3s ease';
+            
+            setTimeout(() => {
+                affirmationText.textContent = affirmations[randomIndex];
+                affirmationText.style.opacity = '1';
+            }, 300);
+        }
+
+        // Mood Tracker
+        function selectMood(element, mood) {
+            // Remove selected class from all options
+            document.querySelectorAll('.mood-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Add to clicked option
+            element.classList.add('selected');
+        }
+
+        function saveMood() {
+            const selected = document.querySelector('.mood-option.selected');
+            if (selected) {
+                alert('Your mood has been recorded. Thank you for checking in!');
+                closeModal('mood-modal');
+            } else {
+                alert('Please select how you\'re feeling today.');
+            }
+        }
+
+        // Meditation/Sleep Sounds Player
+        let currentAudio = null;
+        let progressInterval = null;
+
+        function playTrack(trackType) {
+            // Stop any currently playing audio
+            stopAllTracks();
+            
+            // For demo purposes, we won't actually play audio
+            // In a real implementation, you would load and play the audio file here
+            
+            // Update UI to show playing state
+            const playBtns = document.querySelectorAll('.play-btn i');
+            playBtns.forEach(btn => {
+                btn.className = 'fas fa-play';
+            });
+            
+            // Set current track to play
+            event.currentTarget.querySelector('.play-btn i').className = 'fas fa-pause';
+            
+            // Start progress bar animation
+            const progressBar = trackType === 'rain' || trackType === 'waves' || trackType === 'forest' 
+                ? document.getElementById('sleep-progress') 
+                : document.getElementById('meditation-progress');
+            
+            let progress = 0;
+            progressBar.style.width = '0%';
+            
+            progressInterval = setInterval(() => {
+                progress += 0.5;
+                progressBar.style.width = `${progress}%`;
+                
+                if (progress >= 100) {
+                    clearInterval(progressInterval);
+                    progressBar.style.width = '0%';
+                    event.currentTarget.querySelector('.play-btn i').className = 'fas fa-play';
+                }
+            }, 1000);
+        }
+
+        function stopAllTracks() {
+            // Stop any playing audio
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio = null;
+            }
+            
+            // Clear progress intervals
+            if (progressInterval) {
+                clearInterval(progressInterval);
+                progressInterval = null;
+            }
+            
+            // Reset progress bars
+            document.getElementById('meditation-progress').style.width = '0%';
+            document.getElementById('sleep-progress').style.width = '0%';
+            
+            // Reset play buttons
+            const playBtns = document.querySelectorAll('.play-btn i');
+            playBtns.forEach(btn => {
+                btn.className = 'fas fa-play';
+            });
+        }
+    </script>
+</body>
+</html>

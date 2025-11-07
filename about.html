@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eunoia | Learn About Mental Health</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="learn-more.css">
+</head>
+<body>
+    <div class="floating-bubbles">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+    </div>
+
+    <div class="learn-more-container">
+        <header class="animated-header">
+            <h1 class="title-animate">Learn <span class="gradient-text">More</span></h1>
+            <p class="subtitle-animate">Explore mental health resources and information</p>
+            <div class="header-decoration"></div>
+        </header>
+
+        <div class="interactive-tabs">
+            <!-- Tab 1 -->
+            <div class="tab-wrapper">
+                <input type="radio" name="tab" id="tab1" checked>
+                <label for="tab1" class="tab-label">
+                    <i class="fas fa-heartbeat tab-icon"></i>
+                    <span>Mental Health 101</span>
+                    <div class="tab-indicator"></div>
+                </label>
+                <div class="tab-content">
+                    <div class="content-wrapper">
+                        <h3>Understanding Mental Health</h3>
+                        <p>Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act as we cope with life.</p>
+                        <div class="animated-stats">
+                            <div class="stat-item grow-animate">
+                                <div class="stat-number" data-target="20">0</div>
+                                <div class="stat-label">% of adults experience mental illness</div>
+                            </div>
+                            <div class="stat-item grow-animate">
+                                <div class="stat-number" data-target="50">0</div>
+                                <div class="stat-label">% of mental illness begins by age 14</div>
+                            </div>
+                        </div>
+                        <button class="animated-btn pulse-on-hover">
+                            Read More <i class="fas fa-arrow-right arrow-animate"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2 -->
+            <div class="tab-wrapper">
+                <input type="radio" name="tab" id="tab2">
+                <label for="tab2" class="tab-label">
+                    <i class="fas fa-hands-helping tab-icon"></i>
+                    <span>Getting Help</span>
+                    <div class="tab-indicator"></div>
+                </label>
+                <div class="tab-content">
+                    <div class="content-wrapper">
+                        <h3>Finding Support</h3>
+                        <p>You're not alone. There are many resources available for mental health support and treatment.</p>
+                        <div class="resource-cards">
+                            <div class="resource-card tilt-effect">
+                                <i class="fas fa-phone-alt"></i>
+                                <h4>Crisis Hotlines</h4>
+                                <p>National Suicide Prevention Lifeline: 988</p>
+                            </div>
+                            <div class="resource-card tilt-effect">
+                                <i class="fas fa-user-md"></i>
+                                <h4>Therapy Options</h4>
+                                <p>Find licensed professionals in your area</p>
+                            </div>
+                        </div>
+                        <button class="animated-btn pulse-on-hover">
+                            View Resources <i class="fas fa-arrow-right arrow-animate"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3 -->
+            <div class="tab-wrapper">
+                <input type="radio" name="tab" id="tab3">
+                <label for="tab3" class="tab-label">
+                    <i class="fas fa-brain tab-icon"></i>
+                    <span>Self-Care</span>
+                    <div class="tab-indicator"></div>
+                </label>
+                <div class="tab-content">
+                    <div class="content-wrapper">
+                        <h3>Self-Care Strategies</h3>
+                        <p>Taking care of your mental health is just as important as physical health. Try these techniques:</p>
+                        <div class="self-care-grid">
+                            <div class="care-item pop-animate">
+                                <div class="care-icon"><i class="fas fa-spa"></i></div>
+                                <h5>Mindfulness</h5>
+                                <p>Daily meditation practice</p>
+                            </div>
+                            <div class="care-item pop-animate">
+                                <div class="care-icon"><i class="fas fa-running"></i></div>
+                                <h5>Exercise</h5>
+                                <p>30 minutes daily</p>
+                            </div>
+                            <div class="care-item pop-animate">
+                                <div class="care-icon"><i class="fas fa-book"></i></div>
+                                <h5>Journaling</h5>
+                                <p>Express your thoughts</p>
+                            </div>
+                        </div>
+                        <button class="animated-btn pulse-on-hover">
+                            Get Tips <i class="fas fa-arrow-right arrow-animate"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="floating-actions">
+            <button class="floating-btn breath-animate">
+                <i class="fas fa-question"></i>
+            </button>
+            <button class="floating-btn breath-animate delay-1">
+                <i class="fas fa-comments"></i>
+            </button>
+            <button class="floating-btn breath-animate delay-2">
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="learn-more.js"></script>
+</body>
+</html>

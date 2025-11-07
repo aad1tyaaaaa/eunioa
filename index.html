@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eunoia - AI Mental Health Companion</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Eunoia</a>
+            <div class="nav-links">
+                <a href="features.html">Features</a>
+                <a href="wellness.html">Wellness Tools</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <div class="theme-toggle">
+                    <i class="ri-moon-line"></i>
+                </div>
+                <button class="btn-primary"><a href="signin.html">Sign In</a></button>
+                <div class="mobile-menu-btn">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your AI Companion for Mental Wellness</h1>
+                <p>
+                    Eunioa uses advanced AI to provide personalized mental health support,
+                    guided meditation, and emotional intelligence training - available 24/7.
+                </p>
+                <div class="hero-buttons">
+                    <!-- <button class="button-85" role="button">Start Chatting</button> -->
+<a href="http://localhost:5000/" class="button-85" id="chat-button" style="text-decoration:none;">
+    <div class="dots_border"></div>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        class="sparkle"
+    >
+        <path
+            class="path"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke="black"
+            fill="black"
+            d="M14.187 8.096L15 5.25L15.813 8.096C16.0231 8.83114 16.4171 9.50062 16.9577 10.0413C17.4984 10.5819 18.1679 10.9759 18.903 11.186L21.75 12L18.904 12.813C18.1689 13.0231 17.4994 13.4171 16.9587 13.9577C16.4181 14.4984 16.0241 15.1679 15.814 15.903L15 18.75L14.187 15.904C13.9769 15.1689 13.5829 14.4994 13.0423 13.9587C12.5016 13.4181 11.8321 13.0241 11.097 12.814L8.25 12L11.096 11.187C11.8311 10.9769 12.5006 10.5829 13.0413 10.0423C13.5819 9.50162 13.9759 8.83214 14.186 8.097L14.187 8.096Z"
+        ></path>
+        <path
+            class="path"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke="black"
+            fill="black"
+            d="M6 14.25L5.741 15.285C5.59267 15.8785 5.28579 16.4206 4.85319 16.8532C4.42059 17.2858 3.87853 17.5927 3.285 17.741L2.25 18L3.285 18.259C3.87853 18.4073 4.42059 18.7142 4.85319 19.1468C5.28579 19.5794 5.59267 20.1215 5.741 20.715L6 21.75L6.259 20.715C6.40725 20.1216 6.71398 19.5796 7.14639 19.147C7.5788 18.7144 8.12065 18.4075 8.714 18.259L9.75 18L8.714 17.741C8.12065 17.5925 7.5788 17.2856 7.14639 16.853C6.71398 16.4204 6.40725 15.8784 6.259 15.285L6 14.25Z"
+        ></path>
+        <path
+            class="path"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke="black"
+            fill="black"
+            d="M6.5 4L6.303 4.5915C6.24777 4.75718 6.15472 4.90774 6.03123 5.03123C5.90774 5.15472 5.75718 5.24777 5.5915 5.303L5 5.5L5.5915 5.697C5.75718 5.75223 5.90774 5.84528 6.03123 5.96877C6.15472 6.09226 6.24777 6.24282 6.303 6.4085L6.5 7L6.697 6.4085C6.75223 6.24282 6.84528 6.09226 6.96877 5.96877C7.09226 5.84528 7.24282 5.75223 7.4085 5.697L8 5.5L7.4085 5.303C7.24282 5.24777 7.09226 5.15472 6.96877 5.03123C6.84528 4.90774 6.75223 4.75718 6.697 4.5915L6.5 4Z"
+        ></path>
+    </svg>
+    <span class="text_button">Start Chatting</span>
+</a>
+                    <button class="button-64" role="button">
+                        <span class="text"><a href="about.html">Learn More</a></span>
+                    </button>
+                </div>
+                <div class="trust-badge">
+                    <div class="user-avatars">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" />
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" />
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User" />
+                    </div>
+                    <span>Trusted by 10,000+ users worldwide</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-avatar">
+                    <img src="mental.jpg" alt="Eunioa Avatar" />
+                </div>
+                <div class="floating-particles">
+                    <div class="particle particle-1"></div>
+                    <div class="particle particle-2"></div>
+                    <div class="particle particle-3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="ri-arrow-down-line"></i>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Experience AI-Powered Mental Wellness</h2>
+                <p>
+                    Discover how Eunioa can help you manage stress, improve emotional intelligence,
+                    and develop healthy mental habits.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" style="opacity: 1;">
+                    <div class="feature-icon">
+                        <i class="ri-message-3-line"></i>
+                    </div>
+                    <h3>24/7 Supportive Chat</h3>
+                    <p>
+                        Connect with Eunioa anytime for conversations that help you process emotions,
+                        reduce anxiety, and gain new perspectives.
+                    </p>
+                </div>
+                <div class="feature-card" style="opacity: 1;">
+                    <div class="feature-icon">
+                        <i class="ri-mental-health-line"></i>
+                    </div>
+                    <h3>Personalized Insights</h3>
+                    <p>
+                        Receive customized recommendations and insights based on your conversation
+                        patterns, mood tracking, and wellness goals.
+                    </p>
+                </div>
+                <div class="feature-card" style="opacity: 1;">
+                    <div class="feature-icon">
+                        <i class="ri-heart-pulse-line"></i>
+                    </div>
+                    <h3>Guided Exercises</h3>
+                    <p>
+                        Access a library of guided meditations, breathing exercises, and cognitive
+                        behavioral techniques tailored to your needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Demo Section -->
+    <section class="chat-demo">
+        <div class="container">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div class="chat-avatar">
+                        <i class="ri-robot-line"></i>
+                    </div>
+                    <h3>Chat with Eunioa</h3>
+                    <div class="chat-actions">
+                        <button><i class="ri-volume-up-line"></i></button>
+                        <button><i class="ri-settings-3-line"></i></button>
+                    </div>
+                </div>
+                <div class="chat-messages">
+                    <div class="message bot-message">
+                        <div class="message-avatar">
+                            <i class="ri-robot-line"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>
+                                Hello! I'm Eunioa, your mental wellness companion. How are you feeling
+                                today?
+                            </p>
+                            <div class="audio-wave">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message user-message">
+                        <div class="message-content">
+                            <p>
+                                I've been feeling a bit overwhelmed with work lately. It's hard to focus
+                                sometimes.
+                            </p>
+                        </div>
+                        <div class="message-avatar">
+                            <i class="ri-user-line"></i>
+                        </div>
+                    </div>
+                    <div class="message bot-message">
+                        <div class="message-avatar">
+                            <i class="ri-robot-line"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>
+                                I understand how challenging that can be. Let's explore some strategies
+                                to help manage your workload and reduce stress. Would you like to try a
+                                quick breathing exercise first?
+                            </p>
+                            <div class="audio-wave">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <button class="emoji-btn">
+                        <i class="ri-emotion-line"></i>
+                    </button>
+                    <input type="text" placeholder="Type your message..." />
+                    <button class="send-btn">
+                        <i class="ri-send-plane-fill"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wellness Tools Section -->
+    <section id="tools" class="wellness-tools">
+        <div class="container">
+            <div class="section-header">
+                <h2>Interactive Wellness Tools</h2>
+                <p>
+                    Explore our suite of interactive tools designed to help you track, understand,
+                    and improve your mental wellbeing.
+                </p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card" style="opacity: 1;">
+                    <h3>Mood Tracker</h3>
+                    <div class="mood-cube">
+                        <span>How are you feeling?</span>
+                    </div>
+                    <div class="mood-buttons">
+                        <button class="mood-btn happy">
+                            <i class="ri-sun-line"></i> Happy
+                        </button>
+                        <button class="mood-btn sad">
+                            <i class="ri-emotion-sad-line"></i> Sad
+                        </button>
+                        <button class="mood-btn angry">
+                            <i class="ri-emotion-unhappy-line"></i> Angry
+                        </button>
+                        <button class="mood-btn calm">
+                            <i class="ri-rest-time-line"></i> Calm
+                        </button>
+                    </div>
+                    <div class="mood-history">
+                        <h4>Your Mood History</h4>
+                        <div id="moodChart" class="chart-container"></div>
+                    </div>
+                </div>
+                <div class="tool-card" style="opacity: 1;">
+                    <h3>Breathing Exercise</h3>
+                    <div class="breathing-sphere">
+                        <span>Breathe</span>
+                        <div class="breathing-animation"></div>
+                    </div>
+                    <div class="breathing-controls">
+                        <div class="control-group">
+                            <label>Breathing Pattern</label>
+                            <div class="pattern-buttons">
+                                <button class="btn-primary">4-7-8</button>
+                                <button>Box Breathing</button>
+                                <button>Deep Breathing</button>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label>Duration</label>
+                            <input type="range" min="1" max="10" value="5" class="custom-range" />
+                            <div class="range-labels">
+                                <span>1 min</span>
+                                <span>5 min</span>
+                                <span>10 min</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-primary start-session-btn">
+                        <i class="ri-play-fill"></i> Start Session
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Visualization Section -->
+    <section class="progress-visualization">
+        <div class="container">
+            <div class="section-header">
+                <h2>Visualize Your Progress</h2>
+                <p>Track your emotional journey and see your growth over time with our immersive visualizations.</p>
+            </div>
+            <div class="progress-container">
+                <div class="progress-stats">
+                    <h3>Wellness Score</h3>
+                    <div class="wellness-score">
+                        78<span>/100</span>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <span>Sleep Quality</span>
+                            <span>82%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-progress sleep-quality" style="width: 82%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <span>Stress Level</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-progress stress-level" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <span>Mindfulness</span>
+                            <span>73%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-progress mindfulness" style="width: 73%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-chart">
+                    <div class="chart-header">
+                        <h3>Emotional Balance</h3>
+                        <div class="chart-actions">
+                            <button><i class="ri-calendar-line"></i></button>
+                            <button><i class="ri-download-line"></i></button>
+                        </div>
+                    </div>
+                    <div id="emotionChart" class="chart-container"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonials-grid">
+                <div class="testimonial-card" style="opacity: 1;">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma Thompson" />
+                        <div>
+                            <h4>Zeel Gajra</h4>
+                            <p>Marketing Director</p>
+                        </div>
+                    </div>
+                    <p>
+                        "Eunioa has been a game-changer for managing my work anxiety. The breathing
+                        exercises and daily check-ins have helped me stay centered during stressful
+                        meetings and deadlines."
+                    </p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card" style="opacity: 1;">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" />
+                        <div>
+                            <h4>Jaiswar aaditya</h4>
+                            <p>Software Engineer</p>
+                        </div>
+                    </div>
+                    <p>
+                        "As someone who was skeptical about AI therapy, I'm amazed by how personalized
+                        and helpful Eunioa's responses are. The mood tracking feature has helped me
+                        identify patterns in my emotional wellbeing."
+                    </p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-fill"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card" style="opacity: 1;">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophia Rodriguez" />
+                        <div>
+                            <h4>Shanish Jain</h4>
+                            <p>Graduate Student</p>
+                        </div>
+                    </div>
+                    <p>
+                        "Eunioa has been my companion through a challenging thesis year. The late-night
+                        chats and guided meditations have helped me manage stress and maintain focus
+                        when I needed it most."
+                    </p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+
+    <section class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Wellness Journey</h2>
+                <p>Select the plan that best fits your mental wellness needs and goals.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card" style="opacity: 1;">
+                    <h3>Basic</h3>
+                    <p>Essential wellness support</p>
+                    <div class="price">Free</div>
+                    <ul>
+                        <li><i class="ri-check-line"></i> Daily check-ins</li>
+                        <li><i class="ri-check-line"></i> Basic mood tracking</li>
+                        <li><i class="ri-check-line"></i> 5 guided meditations</li>
+                        <li class="disabled"><i class="ri-close-line"></i> Advanced analytics</li>
+                        <li class="disabled"><i class="ri-close-line"></i> Personalized recommendations</li>
+                    </ul>
+                    <button class="btn-outline">Get Started</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="featured-badge"></div>
+                    <h3>Premium</h3>
+                    <p>Enhanced mental wellness</p>
+                    <div class="price">$9.99<span>/month</span></div>
+                    <ul>
+                        <li><i class="ri-check-line"></i> Unlimited check-ins</li>
+                        <li><i class="ri-check-line"></i> Advanced mood tracking</li>
+                        <li><i class="ri-check-line"></i> 50+ guided meditations</li>
+                        <li><i class="ri-check-line"></i> Basic analytics</li>
+                        <li><i class="ri-check-line"></i> Personalized recommendations</li>
+                    </ul>
+                    <button class="btn-primary">Start 7-Day Trial</button>
+                </div>
+                <div class="pricing-card" style="opacity: 1;">
+                    <h3>Enterprise</h3>
+                    <p>Team wellness solution</p>
+                    <div class="price">$49.99<span>/month</span></div>
+                    <ul>
+                        <li><i class="ri-check-line"></i> Everything in Premium</li>
+                        <li><i class="ri-check-line"></i> Team analytics dashboard</li>
+                        <li><i class="ri-check-line"></i> Custom wellness programs</li>
+                        <li><i class="ri-check-line"></i> HR integration tools</li>
+                        <li><i class="ri-check-line"></i> Dedicated support</li>
+                    </ul>
+                    <button class="btn-outline">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-background"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Begin Your Wellness Journey Today</h2>
+                <p>
+                    Join thousands of users who have transformed their mental wellbeing with
+                    Eunioa's AI-powered support and guidance.
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn-primary">Start Free Trial</button>
+                    <!-- <button class="btn-outline">Schedule Demo</button> -->
+                    <!-- From Uiverse.io by barisdogansutcu -->
+                    <button>
+                        <a href="demo.html">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 36 36"
+                                width="36px"
+                                height="36px"
+                            >
+                                <rect width="36" height="36" x="0" y="0" fill="#fdd835"></rect>
+                                <path
+                                    fill="#e53935"
+                                    d="M38.67,42H11.52C11.27,40.62,11,38.57,11,36c0-5,0-11,0-11s1.44-7.39,3.22-9.59 c1.67-2.06,2.76-3.48,6.78-4.41c3-0.7,7.13-0.23,9,1c2.15,1.42,3.37,6.67,3.81,11.29c1.49-0.3,5.21,0.2,5.5,1.28 C40.89,30.29,39.48,38.31,38.67,42z"
+                                ></path>
+                                <path
+                                    fill="#b71c1c"
+                                    d="M39.02,42H11.99c-0.22-2.67-0.48-7.05-0.49-12.72c0.83,4.18,1.63,9.59,6.98,9.79 c3.48,0.12,8.27,0.55,9.83-2.45c1.57-3,3.72-8.95,3.51-15.62c-0.19-5.84-1.75-8.2-2.13-8.7c0.59,0.66,3.74,4.49,4.01,11.7 c0.03,0.83,0.06,1.72,0.08,2.66c4.21-0.15,5.93,1.5,6.07,2.35C40.68,33.85,39.8,38.9,39.02,42z"
+                                ></path>
+                                <path
+                                    fill="#212121"
+                                    d="M35,27.17c0,3.67-0.28,11.2-0.42,14.83h-2C32.72,38.42,33,30.83,33,27.17 c0-5.54-1.46-12.65-3.55-14.02c-1.65-1.08-5.49-1.48-8.23-0.85c-3.62,0.83-4.57,1.99-6.14,3.92L15,16.32 c-1.31,1.6-2.59,6.92-3,8.96v10.8c0,2.58,0.28,4.61,0.54,5.92H10.5c-0.25-1.41-0.5-3.42-0.5-5.92l0.02-11.09 c0.15-0.77,1.55-7.63,3.43-9.94l0.08-0.09c1.65-2.03,2.96-3.63,7.25-4.61c3.28-0.76,7.67-0.25,9.77,1.13 C33.79,13.6,35,22.23,35,27.17z"
+                                ></path>
+                                <path
+                                    fill="#01579b"
+                                    d="M17.165,17.283c5.217-0.055,9.391,0.283,9,6.011c-0.391,5.728-8.478,5.533-9.391,5.337 c-0.913-0.196-7.826-0.043-7.696-5.337C9.209,18,13.645,17.32,17.165,17.283z"
+                                ></path>
+                                <path
+                                    fill="#212121"
+                                    d="M40.739,37.38c-0.28,1.99-0.69,3.53-1.22,4.62h-2.43c0.25-0.19,1.13-1.11,1.67-4.9 c0.57-4-0.23-11.79-0.93-12.78c-0.4-0.4-2.63-0.8-4.37-0.89l0.1-1.99c1.04,0.05,4.53,0.31,5.71,1.49 C40.689,24.36,41.289,33.53,40.739,37.38z"
+                                ></path>
+                                <path
+                                    fill="#81d4fa"
+                                    d="M10.154,20.201c0.261,2.059-0.196,3.351,2.543,3.546s8.076,1.022,9.402-0.554 c1.326-1.576,1.75-4.365-0.891-5.267C19.336,17.287,12.959,16.251,10.154,20.201z"
+                                ></path>
+                                <path
+                                    fill="#212121"
+                                    d="M17.615,29.677c-0.502,0-0.873-0.03-1.052-0.069c-0.086-0.019-0.236-0.035-0.434-0.06 c-5.344-0.679-8.053-2.784-8.052-6.255c0.001-2.698,1.17-7.238,8.986-7.32l0.181-0.002c3.444-0.038,6.414-0.068,8.272,1.818 c1.173,1.191,1.712,3,1.647,5.53c-0.044,1.688-0.785,3.147-2.144,4.217C22.785,29.296,19.388,29.677,17.615,29.677z M17.086,17.973 c-7.006,0.074-7.008,4.023-7.008,5.321c-0.001,3.109,3.598,3.926,6.305,4.27c0.273,0.035,0.48,0.063,0.601,0.089 c0.563,0.101,4.68,0.035,6.855-1.732c0.865-0.702,1.299-1.57,1.326-2.653c0.051-1.958-0.301-3.291-1.073-4.075 c-1.262-1.281-3.834-1.255-6.825-1.222L17.086,17.973z"
+                                ></path>
+                                <path
+                                    fill="#e1f5fe"
+                                    d="M15.078,19.043c1.957-0.326,5.122-0.529,4.435,1.304c-0.489,1.304-7.185,2.185-7.185,0.652 C12.328,19.467,15.078,19.043,15.078,19.043z"
+                                ></path>
+                            </svg>
+                            <span class="now">now!</span>
+                            <span class="play">demo</span>
+                        </a>
+                    </button>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">10k+</div>
+                        <div class="stat-label">Active Users</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">92%</div>
+                        <div class="stat-label">Satisfaction</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.8/5</div>
+                        <div class="stat-label">App Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">Eunioa</a>
+                    <p>Your AI companion for mental wellness, available 24/7 to support your emotional health journey.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                        <a href="#"><i class="ri-linkedin-fill"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Wellness Tools</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Enterprise</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Mental Health Guide</a></li>
+                        <li><a href="#">Research</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Crisis Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Subscribe</h4>
+                    <p>Get the latest updates and wellness tips delivered to your inbox.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email" />
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agree-checkbox" class="custom-checkbox" />
+                        <label for="agree-checkbox">I agree to receive emails</label>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">© 2025 Eunioa. All rights reserved.</div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
